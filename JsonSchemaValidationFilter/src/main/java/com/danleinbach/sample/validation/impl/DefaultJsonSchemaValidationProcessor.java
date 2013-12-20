@@ -37,7 +37,7 @@ public class DefaultJsonSchemaValidationProcessor extends AbstractJsonSchemaVali
 	 * {@inheritDoc}
 	 */
 	public DefaultJsonSchemaValidationProcessor() {
-		this("/");
+		this(ValidationConstants.SCHEMA_ROOT_DEFAULT.getValue());
 	}
 
 	/**

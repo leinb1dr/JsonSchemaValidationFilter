@@ -31,7 +31,7 @@ public abstract class AbstractJsonSchemaValidationProcessor implements IJsonSche
 	 * Create a default validation processor
 	 */
 	public AbstractJsonSchemaValidationProcessor() {
-		this("/");
+		this(ValidationConstants.SCHEMA_ROOT_DEFAULT.getValue());
 
 	}
 
