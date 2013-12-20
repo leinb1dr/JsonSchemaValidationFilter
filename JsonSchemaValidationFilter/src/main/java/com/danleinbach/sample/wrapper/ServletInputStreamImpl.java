@@ -27,7 +27,7 @@ public class ServletInputStreamImpl extends ServletInputStream {
 	 *
 	 * @param is - Wrapped input stream.
 	 */
-	ServletInputStreamImpl(InputStream is) {
+	public ServletInputStreamImpl(InputStream is) {
 
 		this.is = is;
 	}

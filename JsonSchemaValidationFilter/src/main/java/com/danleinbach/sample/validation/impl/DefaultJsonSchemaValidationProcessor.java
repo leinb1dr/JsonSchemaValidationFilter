@@ -77,7 +77,8 @@ public class DefaultJsonSchemaValidationProcessor extends AbstractJsonSchemaVali
 	 *
 	 * @param request Servlet request with json payload to analyzed
 	 * @return JsonNode that represents request body
-	 * @throws JsonSchemaValidationException Thrown when an error occurs parsing the request body.
+	 * @throws com.danleinbach.sample.exception.JsonSchemaValidationException
+	 *          Thrown when an error occurs parsing the request body.
 	 */
 	private JsonNode parseRequestBody(HttpServletRequest request) throws JsonSchemaValidationException {
 		try {

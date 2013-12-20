@@ -142,7 +142,8 @@ public abstract class AbstractJsonSchemaValidationProcessor implements IJsonSche
 	 *
 	 * @param schemaLocation Location of the request schema
 	 * @return Objectified form of the json schema
-	 * @throws JsonSchemaValidationException Thrown in the case there is an error processing the json schema
+	 * @throws com.danleinbach.sample.exception.JsonSchemaValidationException
+	 *          Thrown in the case there is an error processing the json schema
 	 */
 	protected JsonSchema getJsonSchema(String schemaLocation) throws JsonSchemaValidationException {
 		try {

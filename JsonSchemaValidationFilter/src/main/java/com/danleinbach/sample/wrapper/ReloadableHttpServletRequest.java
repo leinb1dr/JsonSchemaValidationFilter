@@ -20,7 +20,7 @@ public class ReloadableHttpServletRequest extends HttpServletRequestWrapper {
 	 * Construct a new ReloadableHttpServletRequest from an existing HttpServletRequest
 	 *
 	 * @param request - Incoming HttpServletRequest, that the body needs to be read more than once.
-	 * @throws IOException - In the case the request's body cannot be read.
+	 * @throws java.io.IOException - In the case the request's body cannot be read.
 	 */
 	public ReloadableHttpServletRequest(HttpServletRequest request) throws IOException {
 		super(request);
@@ -33,7 +33,7 @@ public class ReloadableHttpServletRequest extends HttpServletRequestWrapper {
 	 * Create a new ServletInputStream from the cached contents of the request body.
 	 *
 	 * @return - ServletInputStream containing a copy of the request body
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	@Override
 	public ServletInputStream getInputStream() {
@@ -46,7 +46,7 @@ public class ReloadableHttpServletRequest extends HttpServletRequestWrapper {
 	 * body is returned.
 	 *
 	 * @return - BufferedReader containing a copy of the request body
-	 * @throws IOException
+	 * @throws java.io.IOException
 	 */
 	@Override
 	public BufferedReader getReader() throws IOException {

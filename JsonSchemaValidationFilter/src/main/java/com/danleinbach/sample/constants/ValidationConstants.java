@@ -10,7 +10,10 @@ package com.danleinbach.sample.constants;
 public enum ValidationConstants {
 
 	SKIP("skip"),
-	RESOURCE("resource:");
+	RESOURCE("resource:"),
+	SCHEMA_ROOT("schema-root"),
+	VALIDATION_CLASS("validation-class"),
+	SCHEMA_ROOT_DEFAULT("/");
 
 	private final String value;
 
