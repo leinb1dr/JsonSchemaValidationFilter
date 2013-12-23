@@ -10,11 +10,14 @@ import com.github.fge.jsonschema.exceptions.ProcessingException;
 import com.github.fge.jsonschema.main.JsonSchema;
 import com.github.fge.jsonschema.main.JsonSchemaFactory;
 import com.github.fge.jsonschema.report.ProcessingReport;
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created: 12/18/13
@@ -116,15 +119,18 @@ public abstract class AbstractJsonSchemaValidationProcessor implements IJsonSche
 	 */
 	protected String getSchemaLocation(HttpServletRequest request, SchemaLocationConstants location) {
 
-		String uri = request.getRequestURI();
-		String[] pathParts = uri.replaceAll("^/|\\..+$", "").split("/");
-		String fileName = location.getValue() + ".json";
+    String method = request.getMethod();
+    String uri = request.getRequestURI();
+    List<String> pathParts = Lists.newArrayList(Arrays.asList(uri.replaceAll("^/|\\..+$", "").split("/")));
+    String fileName = location.getValue() + ".json";
 
-		for(int x = pathParts.length; x > - 1; x--) {
-			StringBuilder path = new StringBuilder(schemaRoot.replaceFirst("/", ""));
+    pathParts.add(method);
+
+    for(int x = pathParts.size(); x > -1; x--) {
+      StringBuilder path = new StringBuilder(schemaRoot.replaceFirst("/", ""));
 			for(int y = 0; y < x; y++) {
-				path.append(pathParts[y]).append("/");
-			}
+        path.append(pathParts.get(y)).append("/");
+      }
 			String schemaPath = path.append(fileName).toString();
 			LOGGER.debug("Looking for file:{}", schemaPath);
 			URL exists = this.getClass().getClassLoader().getResource(schemaPath);
