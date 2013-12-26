@@ -15,6 +15,13 @@
 
     <properties>
         <org.springframework.version>3.2.2.RELEASE</org.springframework.version>
+        <sonar.projectKey>com.danleinbach</sonar.projectKey>
+        <sonar.projectName>SampleModularValidation</sonar.projectName>
+        <sonar.projectVersion>1.0-SNAPSHOT</sonar.projectVersion>
+        <sonar.projectDescription>ModularValidation</sonar.projectDescription>
+        <sonar.language>java</sonar.language>
+        <sonar.skippedModules>SampleApi</sonar.skippedModules>
+        <sonar.coverage.exclusions>**/domain/*.java,**/exception/*.java,**/constants/*.java</sonar.coverage.exclusions>
     </properties>
 
     <build>
