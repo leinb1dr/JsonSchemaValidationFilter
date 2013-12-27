@@ -1,6 +1,5 @@
 package com.danleinbach.sample.wrapper;
 
-import com.danleinbach.sample.filter.JsonSchemaValidationFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,8 +15,8 @@ import java.io.InputStream;
 public class ServletInputStreamImpl extends ServletInputStream {
 
 	private static final int EOL = - 1;
-	private static final Logger LOGGER = LoggerFactory.getLogger(JsonSchemaValidationFilter.class);
-	private InputStream is;
+  private static final Logger LOGGER = LoggerFactory.getLogger(ServletInputStreamImpl.class);
+  private InputStream is;
 	private ReadListener readListener;
 	private boolean finished;
 
