@@ -11,13 +11,20 @@ import org.springframework.web.bind.annotation.*;
  * @author Daniel
  */
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/sample/home")
 public class HelloValidation {
 
-	@RequestMapping(value = "/{age:[0-9]+}", method = RequestMethod.POST)
+	@RequestMapping(value = "/{age:[0-9]*}", method = RequestMethod.POST)
 	@ResponseBody
 	@ResponseStatus(HttpStatus.OK)
 	public User validateRequest(@RequestBody User user) {
 		return user;
 	}
+
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    @ResponseStatus(HttpStatus.OK)
+    public User validateOtherRequest(@RequestBody User user) {
+        return user;
+    }
 }
